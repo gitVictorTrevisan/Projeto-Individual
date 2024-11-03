@@ -1,0 +1,25 @@
+:root {
+    --main-font: "OptimusPrincepsSemiBold";
+    --main-color: red;
+}
+
+body{
+    margin: 0px;
+}
+.body-text {
+    font-family: var(--main-font);
+}
+.nav-bar{
+    width: 100%;
+    position: sticky;
+}
+.nav-bar-inner{
+    height: 90px;
+    background: url(imgs/nav-bg.jpg);
+    background-size: 100% 100%;
+}
+.main-content{
+    background: url(imgs/bg-landing-page.png);
+    height: 1227px;
+    background-size: 100% 100%;
+}
