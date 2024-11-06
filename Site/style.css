@@ -1,25 +1,68 @@
 :root {
     --main-font: "OptimusPrincepsSemiBold";
-    --main-color: red;
+    --secondary-font: "Cinzel"
+    --title-color: ""
 }
 
-body{
+body {
     margin: 0px;
 }
+
 .body-text {
     font-family: var(--main-font);
 }
-.nav-bar{
+
+.nav-bar {
     width: 100%;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    z-index: 999;
 }
-.nav-bar-inner{
-    height: 90px;
+
+.nav-bar-inner {
+    height: 89px;
     background: url(imgs/nav-bg.jpg);
     background-size: 100% 100%;
 }
-.main-content{
+
+.main-content {
+    margin-top: 89px;
+    position: absolute;
     background: url(imgs/bg-landing-page.png);
-    height: 1227px;
+    /* height: 1227px; */
     background-size: 100% 100%;
+    width: 100%;
+
+}
+
+.main-content img {
+    display: flex;
+    justify-self: right;
+    width: 70%;
+    
+}
+.intersection{
+    margin-top: 940px;
+    position: absolute;
+    width: 100%;
+}
+.intersection img{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+.intersection .ods_title{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin-top: 195px;
+    font-size: 20px;
+    
+    font-family: var(--main-font);
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 3;
 }
