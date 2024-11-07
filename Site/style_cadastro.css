@@ -1,0 +1,21 @@
+:root {
+    --main-font: "OptimusPrincepsSemiBold";
+    --secondary-font: "Cinzel"
+}
+body{
+    background: url(imgs/Cadastro.png);
+    background-size: cover;
+    height: 100vh;
+}
+
+.main-content{
+    background: url(imgs/main-content-cadastro.png) no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-size: 130vh;
+}
+
