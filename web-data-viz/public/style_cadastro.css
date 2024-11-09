@@ -1,0 +1,77 @@
+:root {
+    --main-font: "OptimusPrincepsSemiBold";
+    --secondary-font: "Cinzel"
+}
+body{
+    background: url(imgs/Cadastro.png);
+    background-size: cover;
+    height: 97vh;
+}
+body h1{
+    justify-self: center;
+    margin-top: 100px;
+}
+.main-content{
+    font-family: var(--main-font);
+    background: url(imgs/main-content-cadastro.png) no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    background-size: 130vh;
+}
+.main-content .title-cadastro{
+    font-size: larger;
+    margin-bottom: 3vh;
+    font-size: 38px;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.main-content p{
+    display: flex;
+    font-family: var(--secondary-font);
+    align-items: center;
+    height: 30px;
+    margin: 0px;
+
+}
+.main-inputs input{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 30px;
+    width: 300px;
+    background-color: #0a0a0a;
+    border: solid 2px #85712f;
+}
+input::placeholder {
+    font-family: var(--main-font);
+    margin-left: 5px;
+}
+.main-content button{
+    all: unset;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    font-size: 30px;
+    margin: 3vh 0vh 2vh 0vh;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.main-content button:hover{
+    transform: scale(1.2);
+    transition: 0.1s;
+}
+.main-content .login{
+    font-family: var(--secondary-font);
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
