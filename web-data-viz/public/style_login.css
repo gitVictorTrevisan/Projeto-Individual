@@ -3,7 +3,7 @@
     --secondary-font: "Cinzel"
 }
 body{
-    background: url(imgs/Cadastro.png);
+    background: url(imgs/background-login.png) no-repeat;
     background-size: cover;
     height: 97vh;
 }
@@ -13,7 +13,7 @@ body h1{
 }
 .main-content{
     font-family: var(--main-font);
-    background: url(imgs/main-content-cadastro.png) no-repeat;
+    background: url(imgs/main-content.png) no-repeat;
     background-position: center;
     display: flex;
     justify-content: center;
@@ -22,9 +22,9 @@ body h1{
     height: 100%;
     background-size: 130vh;
 }
-.main-content .title-cadastro{
+.main-content .title-login{
     font-size: larger;
-    margin-bottom: 3vh;
+    margin-bottom: 9vh;
     font-size: 38px;
     background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
     -webkit-background-clip: text;
@@ -58,7 +58,7 @@ input::placeholder {
     align-self: center;
     justify-self: center;
     font-size: 30px;
-    margin: 3vh 0vh 2vh 0vh;
+    margin: 2vh 0vh 6vh 0vh;
     background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
