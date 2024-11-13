@@ -1,0 +1,174 @@
+:root {
+    --main-font: "OptimusPrincepsSemiBold";
+    --secondary-font: "Cinzel"
+        --title-color: ""
+}
+
+body {
+    margin: 0px;
+}
+
+.body-text {
+    font-family: var(--main-font);
+}
+
+.nav-bar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-bar-inner {
+    height: 89px;
+    background: url(imgs/nav-bg.jpg);
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0vh 10vh 0vh 10vh;
+}
+
+.nav-bar-inner a {
+    /* all: unset; */
+    font-size: 30px;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--main-font);
+}
+
+li {
+    list-style-type: none;
+}
+
+.nav-bar-inner li:hover {
+    transform: scale(1.2);
+    transition: 0.1s;
+}
+
+.login-cadastro {
+    display: flex;
+    align-items: center;
+    width: 50vh;
+    justify-content: space-between;
+}
+
+.main-content {
+    margin-top: 89px;
+    position: absolute;
+    background: url(imgs/bg-landing-page.png);
+    background-size: 100% 100%;
+    width: 100%;
+
+}
+
+.main-content img {
+    display: flex;
+    justify-self: right;
+    width: 70%;
+
+}
+
+.poe-logo {
+    margin: 10vh 0vh 0vh 25vh;
+    width: 30%;
+    position: relative;
+    z-index: 10;
+}
+
+.main-text-landing-page {
+    width: 750px;
+    margin: 0vh 0vh 0vh 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    font-size: 24px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.main-text-landing-page h1 {
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    font-family: var(--main-font);
+    font-size: 70px;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intersection {
+    margin-top: 14vh;
+    position: absolute;
+    width: 100%;
+}
+
+.intersection img {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+
+.intersection .ods_title {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin-top: 195px;
+    font-size: 20px;
+    font-family: var(--main-font);
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 3;
+}
+
+.ods {
+    background: url(imgs/ods_background_img.png);
+    height: 780px;
+    margin: 45vh 0vh 0vh 0vh;
+}
+
+.ods img {
+    width: 100%;
+}
+
+.desc-ods {
+    background: url(imgs/fade-desc-ods.png) no-repeat;
+    background-size: 100%;
+    height: 850px;
+}
+
+.desc-ods-container {
+    width: 70%;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.desc-ods-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5vh 0vh 0vh 0vh;
+
+}
+
+.desc-ods h3 {
+    font-family: var(--main-font);
+    font-size: 25px;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.desc-ods p {
+    color: #ffffff;
+}
