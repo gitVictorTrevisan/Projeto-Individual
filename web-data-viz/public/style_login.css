@@ -2,16 +2,19 @@
     --main-font: "OptimusPrincepsSemiBold";
     --secondary-font: "Cinzel"
 }
-body{
+
+body {
     background: url(imgs/background-login.png) no-repeat;
     background-size: cover;
     height: 97vh;
 }
-body h1{
+
+body h1 {
     justify-self: center;
     margin-top: 100px;
 }
-.main-content{
+
+.main-content {
     font-family: var(--main-font);
     background: url(imgs/main-content.png) no-repeat;
     background-position: center;
@@ -22,7 +25,8 @@ body h1{
     height: 100%;
     background-size: 130vh;
 }
-.main-content .title-login{
+
+.main-content .title-login {
     font-size: larger;
     margin-bottom: 9vh;
     font-size: 38px;
@@ -30,7 +34,8 @@ body h1{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.main-content p{
+
+.main-content p {
     display: flex;
     font-family: var(--secondary-font);
     align-items: center;
@@ -38,7 +43,8 @@ body h1{
     margin: 0px;
 
 }
-.main-inputs input{
+
+.main-inputs input {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -48,11 +54,13 @@ body h1{
     border: solid 2px #85712f;
     color: #9b9b9b;
 }
+
 input::placeholder {
     font-family: var(--main-font);
     margin-left: 5px;
 }
-.main-content button{
+
+.main-content button {
     all: unset;
     display: flex;
     align-self: center;
@@ -63,11 +71,13 @@ input::placeholder {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.main-content button:hover{
+
+.main-content button:hover {
     transform: scale(1.2);
     transition: 0.1s;
 }
-.main-content .login{
+
+.main-content .login {
     font-family: var(--secondary-font);
     display: flex;
     align-self: center;

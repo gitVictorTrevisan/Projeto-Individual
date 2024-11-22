@@ -150,6 +150,8 @@ li {
     display: flex;
     align-self: center;
     justify-self: center;
+    position: relative;
+    z-index: 3;
 }
 
 .desc-ods-box {
@@ -171,4 +173,28 @@ li {
 
 .desc-ods p {
     color: #ffffff;
+}
+.intersection-2 {
+    position: absolute;
+    width: 100%;
+}
+.intersection-2 img {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+
+.intersection-2 .ods_title {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin-top: 195px;
+    font-size: 20px;
+    font-family: var(--main-font);
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 3;
 }

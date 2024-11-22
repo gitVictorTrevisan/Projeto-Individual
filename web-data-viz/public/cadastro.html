@@ -9,6 +9,11 @@
 </head>
 <body>
     <div class="main-content">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+              <span id="mensagem_erro"></span>
+            </div>
+          </div>
         <h3></h3>
         <span class="title-cadastro">Cadastre-se</span>
         <div class="main-inputs">
@@ -23,6 +28,12 @@
         <button class="button_cadastrar" onclick="cadastrar()">Cadastrar</button>
         <span class="login">Já possui uma conta<a href="login.html">? Faça login.</a></span>
     </div>
+    <div id="div_aguardar" class="loading-div">
+        <img src="./assets/circle-loading.gif" id="loading-gif" />
+      </div>
+
+      <div id="div_erros_login"></div>
 </body>
+
 <script src="cadastro.js"></script>
 </html>
