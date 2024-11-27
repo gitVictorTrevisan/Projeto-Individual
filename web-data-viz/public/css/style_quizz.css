@@ -2,55 +2,128 @@
 /* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
 
 :root {
-    --primary-brand-color: #ED145B;
-    --secondary-brand-color: #0762C8;
-    --success: #198754;
-    --success-dark: #095c36;
-    --success-light: #9dd3ba;
-    --warning: #ffc107;
-    --warning-dark: #705400;
-    --warning-light: #fdebb3;
-    --danger: #dc3545;
-    --danger-dark: #990c19;
-    --danger-light: #f0c1c6;
-    --new-gray: #CCCCCC;
-    --new-black: #212427;
-    --new-white: #E8E8E8;
+    --main-font: "Cinzel";
+    --secondary-font: "Markazi Text";
+    --regular-font-color: #A38D6D;
 }
 
 body {
-    color: var(--new-black);
-    background-color: var(--new-white);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 98vw;
+    height: 100vh;
+    background-color: #0f0f0f;
+    /* background-image: url(../assets/imgs/quizz-background3.jpg);
+    background-size: cover; */
+    margin: 0;
+
 }
 
-button {
-    font-family: monospace;
-    font-weight: bold;
+#tela-inicial {
+    display: flex;
+    height: 97vh;
+    width: 97vw;
+    justify-content: center;
+
+}
+
+.conteudo-tela-inicial h1 {
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.conteudo-tela-inicial {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 90vh;
+    width: 50vw;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 20px;
+}
+
+.introducao {
+    font-family: var(--secondary-font);
+    color: var(--regular-font-color);
+    font-size: 30px;
+}
+
+#tela-inicial button {
+    all: unset;
+    font-family: var(--main-font);
+    font-size: 50px;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 200ms ease-out;
+}
+
+#tela-inicial button:hover {
+    transform: scale(1.2);
+    transition: all 200ms ease-in;
+}
+
+.main-content {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.left {
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+}
+
+.poe-logo{
+    min-height: 20vh;
+    max-height: 30vh;
+}
+
+.right {
+    height: 100vh;
+    width: 20vw;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main-font-color {
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#pontuacao {
+    padding: 10px;
+    height: 97vh;
 }
 
 .flex-colunar {
-    display: flex;
+    /* display: flex; */
+    display: grid;
     flex-direction: column;
 }
 
-.width-fit-content {
+/* .width-fit-content {
     width: fit-content;
-}
-
-.border-primary {
-    border: 3px solid var(--primary-brand-color);
-}
-
-.border-secondary {
-    border: 3px solid var(--secondary-brand-color);
-}
+} */
 
 .padding-8 {
+    font-size: 20px;
+    font-family: var(--main-font);
     padding: 8px;
 }
 
 .text-bold {
+    font-family: var(--main-font);
     font-weight: bold;
 }
 
@@ -72,3 +145,115 @@ button {
 .text-new-gray {
     color: var(--new-gray);
 }
+
+.radio-options {
+    margin: 10px 0px 10px 0px;
+}
+
+.radio-options input {
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px #050505;
+    border-radius: 50%;
+}
+
+.radio-options input:hover {
+    cursor: pointer;
+}
+
+.radio-options input:checked {
+    background-color: #998b0c;
+    box-shadow: inset 2px 5px 10px #cfc201;
+}
+
+.option {
+    color: var(--regular-font-color);
+    font-family: var(--secondary-font);
+}
+
+/* .certo {
+    display: contents;
+    height: 20px;
+    width: 20px;
+}
+
+.errado {
+    display: contents;
+    height: 20px;
+} */
+
+
+.main-background {
+    background-image: url(../assets/imgs/nine-palace-bg\ -\ Copia.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#jogo {
+    justify-content: space-between;
+    padding: 10px;
+    height: 70vh;
+    width: 45vw;
+    box-shadow: 20px 20px 60px #000;
+}
+
+#jogo::after {
+    content: "";
+    background: url(../assets/imgs/Captura\ de\ tela\ 2024-08-20\ 103841.png) no-repeat center top;
+    width: 285px;
+    height: 104px;
+    background-size: contain;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -9vw;
+    /* align-self: center; */
+}
+#perguntaDaQuestaoAtual{
+    font-family: var(--secondary-font);
+    font-size: 25px;
+}
+
+#botoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-end;
+}
+
+#botoes button {
+    all: unset;
+    font-size: 20px;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 5px 0px 7px 0px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#botoes button:hover {
+    border-bottom: 2px solid #A38D6D;
+    margin: 5px 0px 5px 0px;
+}
+
+#botoes button:disabled {
+    all: unset;
+    color: #3a3a3a;
+    margin: 5px 0px 7px 0px;
+}
+
+.alternativa-certa{
+    color: #267712;
+}
+
+.alternativa-errada{
+    color: #611111;
+}
+
