@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Markazi+Text:wght@400..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style_votacao.css" />
+  <title>The Game Awards</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body onload="obterDadosGrafico()">
+  <div class="painel">
+    <header>
+      <img src="imgs/poe-logo.png" alt="logo_game_awards" width="200px" />
+    </header>
+    <div class="titulos main-font-color">
+      <h1>VOTE QUAL A MELHOR LIGA</h1>
+    </div>
+    <div class="jogos-concorrentes">
+      <div class="section">
+        <div class="banner" onclick="votar('Onslaught League')">
+          <img src="./imgs/banner de liga/Onslaught_league_banner.png"/>
+          <p>Onslaught League</p>
+        </div>
+        <div class="banner" onclick="votar('Anarchy League')">
+          <img src="./imgs/banner de liga/Anarchy_league_banner.png"/>
+          <p>Anarchy League</p>
+        </div>
+        <div class="banner" onclick="votar('Domination League')">
+          <img src="./imgs/banner de liga/Domination_league_banner.png"/>
+          <p>Domination League</p>
+        </div>
+        <div class="banner" onclick="votar('Nemesis League')">
+          <img src="./imgs/banner de liga/Nemesis_league_banner.png"/>
+          <p>Nemesis League</p>
+        </div>
+        <div class="banner" onclick="votar('Invasion League')">
+          <img src="./imgs/banner de liga/Invasion_league_banner.png" />
+          <p>Invasion League</p>
+        </div>
+        <div class="banner" onclick="votar('Ambush League')">
+          <img src="./imgs/banner de liga/Ambush_league_banner.png"/>
+          <p>Ambush League</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="banner" onclick="votar('Beyond League')">
+          <img src="./imgs/banner de liga/Beyond_league_banner.png"/>
+          <p>Beyond League</p>
+        </div>
+        <div class="banner" onclick="votar('Rampage League')">
+          <img src="./imgs/banner de liga/Rampage_league_banner.png"/>
+          <p>Rampage League</p>
+        </div>
+        <div class="banner" onclick="votar('Torment League')">
+          <img src="./imgs/banner de liga/Torment_league_banner.png"/>
+          <p>Torment League</p>
+        </div>
+        <div class="banner" onclick="votar('Bloodlines League')">
+          <img src="./imgs/banner de liga/Bloodlines_league_banner.png"/>
+          <p>Bloodlines League</p>
+        </div>
+        <div class="banner" onclick="votar('Tempest League')">
+          <img src="./imgs/banner de liga/Tempest_league_banner.png"/>
+          <p>Tempest League</p>
+        </div>
+        <div class="banner" onclick="votar('Warbands League')">
+          <img src="./imgs/banner de liga/Warbands_league_banner.png"/>
+          <p>Warbands League</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="banner" onclick="votar('Talisman League')">
+          <img src="./imgs/banner de liga/Talisman_league_banner.png"/>
+          <p>Talisman League</p>
+        </div>
+        <div class="banner" onclick="votar('Perandus League')">
+          <img src="./imgs/banner de liga/Perandus_league_banner.png"/>
+          <p>Perandus League</p>
+        </div>
+        <div class="banner" onclick="votar('Prophecy League')">
+          <img src="./imgs/banner de liga/Prophecy_league_banner.png"/>
+          <p>Prophecy League</p>
+        </div>
+        <div class="banner" onclick="votar('Essence League')">
+          <img src="./imgs/banner de liga/Essence_league_banner.png"/>
+          <p>Essence League</p>
+        </div>
+        <div class="banner" onclick="votar('Breach League')">
+          <img src="./imgs/banner de liga/Breach_league_banner.png"/>
+          <p>Breach League</p>
+        </div>
+        <div class="banner" onclick="votar('Legacy League')">
+          <img src="./imgs/banner de liga/Legacy_league_banner.png"/>
+          <p>Legacy League</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="banner" onclick="votar('Harbinger League')">
+          <img src="./imgs/banner de liga/Harbinger_league_banner.png"/>
+          <p>Harbinger League</p>
+        </div>
+        <div class="banner" onclick="votar('Abyss League')">
+          <img src="./imgs/banner de liga/Abyss_league_banner.png"/>
+          <p>Abyss League</p>
+        </div>
+        <div class="banner" onclick="votar('Bestiary League')">
+          <img src="./imgs/banner de liga/Bestiary_league_banner.png"/>
+          <p>Bestiary League</p>
+        </div>
+        <div class="banner" onclick="votar('Incursion League')">
+          <img src="./imgs/banner de liga/Incursion_league_banner.png"/>
+          <p>Incursion League</p>
+        </div>
+        <div class="banner" onclick="votar('Delve League')">
+          <img src="./imgs/banner de liga/Delve_league_banner.png"/>
+          <p>Delve League</p>
+        </div>
+        <div class="banner" onclick="votar('Betrayal League')">
+          <img src="./imgs/banner de liga/Betrayal_league_banner.png"/>
+          <p>Betrayal League</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="banner" onclick="votar('Systhesis League')">
+          <img src="./imgs/banner de liga/Synthesis_league_banner.png"/>
+          <p>Systhesis League</p>
+        </div>
+        <div class="banner" onclick="votar('Legion League')">
+          <img src="./imgs/banner de liga/Legion_league_banner.png"/>
+          <p>Legion League</p>
+        </div>
+        <div class="banner" onclick="votar('Blight League')">
+          <img src="./imgs/banner de liga/Blight_league_banner.png"/>
+          <p>Blight League</p>
+        </div>
+        <div class="banner" onclick="votar('Metamorph League')">
+          <img src="./imgs/banner de liga/Metamorph_league_banner.png"/>
+          <p>Metamorph League</p>
+        </div>
+        <div class="banner" onclick="votar('Delirium League')">
+          <img src="./imgs/banner de liga/Delirium_league_banner.png"/>
+          <p>Delirium League</p>
+        </div>
+        <div class="banner" onclick="votar('Harvest League')">
+          <img src="./imgs/banner de liga/Harvest_league_banner.png"/>
+          <p>Harvest League</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="banner" onclick="votar('Heist League')">
+          <img src="./imgs/banner de liga/Heist_league_banner.png"/>
+          <p>Heist League</p>
+        </div>
+        <div class="banner" onclick="votar('Ritual League')">
+          <img src="./imgs/banner de liga/Ritual_league_banner.png"/>
+          <p>Ritual League</p>
+        </div>
+        <div class="banner" onclick="votar('Ultimatum League')">
+          <img src="./imgs/banner de liga/Ultimatum_league_banner.png"/>
+          <p>Ultimatum League</p>
+        </div>
+        <div class="banner" onclick="votar('Expedition League')">
+          <img src="./imgs/banner de liga/Expedition_league_banner.png"/>
+          <p>Expedition League</p>
+        </div>
+        <div class="banner" onclick="votar('Scourge League')">
+          <img src="./imgs/banner de liga/Scourge_league_banner.png"/>
+          <p>Scourge League</p>
+        </div>
+        <div class="banner" onclick="votar('Archnemesis League')">
+          <img src="./imgs/banner de liga/Archnemesis_league_banner.png"/>
+          <p>Archnemesis League</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="banner" onclick="votar('Sentinel League')">
+          <img src="./imgs/banner de liga/Sentinel_league_banner.png"/>
+          <p>Sentinel League</p>
+        </div>
+        <div class="banner" onclick="votar('Kalandra League')">
+          <img src="./imgs/banner de liga/Kalandra_league_banner.png"/>
+          <p>Kalandra League</p>
+        </div>
+        <div class="banner" onclick="votar('Sanctum League')">
+          <img src="./imgs/banner de liga/Sanctum_league_banner.png"/>
+          <p>Sanctum League</p>
+        </div>
+        <div class="banner" onclick="votar('Crucible League')">
+          <img src="./imgs/banner de liga/Crucible_league_banner.png"/>
+          <p>Crucible League</p>
+        </div>
+        <div class="banner" onclick="votar('Ancestor League')">
+          <img src="./imgs/banner de liga/Ancestor_league_banner.png"/>
+          <p>Ancestor League</p>
+        </div>
+        <div class="banner" onclick="votar('Affliction League')">
+          <img src="./imgs/banner de liga/Affliction_league_banner.png"/>
+          <p>Affliction League</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="banner" onclick="votar('Necropolis League')">
+          <img src="./imgs/banner de liga/Necropolis_league_banner.png"/>
+          <p>Necropolis League</p>
+        </div>
+        <div class="banner" onclick="votar('Settlers League')">
+          <img src="./imgs/banner de liga/Settlers_league_banner.png"/>
+          <p>Settlers League</p>
+        </div>
+      </div>
+      <div class="grafico">
+        <canvas id="myCanvas"></canvas>
+      </div>
+    </div>
+</body>
+
+</html>
+<script>
+  let myChart;
+
+  function votar(nomeJogo) {
+    fetch(`/votos/votar/${nomeJogo}`, {
+      method: "POST",
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log(`Voto contabilizado`);
+          atualizarGrafico();
+        } else {
+          console.error("Erro na votação ou jogo não encontrado");
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro ao realizar o voto: ${error.message}`);
+      });
+  }
+
+  function obterDadosGrafico() {
+    fetch(`/votos/ultimos`, { cache: "no-store" })
+      .then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+            plotarGrafico(resposta);
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+        );
+      });
+  }
+
+  function plotarGrafico(resposta) {
+    console.log("iniciando plotagem do gráfico...");
+
+    // Criando estrutura para plotar gráfico - labels
+    let labels = [
+      "Settlers league",
+      "Necropolis league",
+      "Affliction league",
+      "Ancestor league",
+      "Crucible league",
+      "Sanctum league",
+      "Kalandra league",
+      "Sentinel league",
+      "Archnemesis league",
+      "Scourge league",
+      "Expedition league",
+      "Ultimatum league",
+      "Ritual league",
+      "Heist league",
+      "Harvest league",
+      "Delirium league",
+      "Metamorph league",
+      "Blight league",
+      "Legion league",
+      "Synthesis league",
+      "Betrayal league",
+      "Delve league",
+      "Incursion league",
+      "Bestiary league",
+      "Abyss league",
+      "Harbinger league",
+      "Legacy league",
+      "Breach league",
+      "Essence league",
+      "Prophecy league",
+      "Perandus league",
+      "Talisman league",
+      "Warbands league",
+      "Tempest league",
+      "Bloodlines league",
+      "Torment league",
+      "Rampage league",
+      "Beyond league",
+      "Ambush league",
+      "Invasion league",
+      "Nemesis league",
+      "Domination league",
+      "Anarchy league",
+      "Onslaught league"
+    ];
+
+    // Criando estrutura para plotar gráfico - dados
+    let dados = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Votos",
+          data: [],
+          fill: false,
+          backgroundColor: [
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+          ],
+          borderColor: [
+            "rgba(75, 192, 192, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+          ],
+          borderWidth: 1,
+          tension: 0.1,
+        },
+      ],
+    };
+
+    console.log("----------------------------------------------");
+    console.log(
+      'Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":'
+    );
+    console.log(resposta);
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      dados.datasets[0].data.push(registro.quantidade);
+    }
+
+    console.log("----------------------------------------------");
+    console.log("O gráfico será plotado com os respectivos valores:");
+    console.log("Labels:");
+    console.log(labels);
+    console.log("Dados:");
+    console.log(dados.datasets);
+    console.log("----------------------------------------------");
+
+    // Criando estrutura para plotar gráfico - config
+    const config = {
+      type: "bar",
+      data: dados,
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: "VOTAÇÃO",
+            color: "#FFFFFF",
+            font: {
+              size: 20,
+            },
+          },
+          legend: {
+            display: true,
+            labels: {
+              color: "white",
+            },
+          },
+        },
+      },
+    };
+
+    // Adicionando gráfico criado em div na tela
+    myChart = new Chart(document.getElementById("myCanvas"), config);
+  }
+
+  function atualizarGrafico() {
+    fetch(`/votos/ultimos`, { cache: "no-store" })
+      .then(function (resposta) {
+        if (resposta.ok) {
+          resposta.json().then(function (respostaJSON) {
+            console.log(`Dados recebidos: ${JSON.stringify(respostaJSON)}`);
+            console.log(`Dados atuais do gráfico:`);
+            console.log(myChart.data);
+
+            myChart.data.datasets[0].data = [];
+
+            for (let i = 0; i < respostaJSON.length; i++) {
+              myChart.data.datasets[0].data.push(respostaJSON[i].quantidade);
+            }
+
+            myChart.update();
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+        );
+      });
+  }
+</script>
