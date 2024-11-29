@@ -76,6 +76,23 @@ body {
     width: 20vw;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ranking h2{
+    font-family: var(--main-font);
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.lista-ranking{
+    font-size: 25px;
+    font-family: var(--secondary-font);
+    color: var(--regular-font-color);
 }
 
 .poe-logo{

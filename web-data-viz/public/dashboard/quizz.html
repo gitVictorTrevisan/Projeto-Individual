@@ -28,7 +28,11 @@
     </div>
     <div id="quiz" class="main-content">
         <div class="left main-background">
-            <img class="poe-logo" src="../imgs/poe-logo.png" alt="">
+            <div class="ranking">
+                <img class="poe-logo" src="../imgs/poe-logo.png" alt="">
+                <h2 class="main-font-color" >Ranking</h2>
+            </div>
+            <div id="ranking" class="lista-ranking"></div>
         </div>
         <div class="center">
             <div id="jogo" class="width-fit-content flex-colunar main-background">
@@ -353,6 +357,7 @@
     }
 
     function finalizarJogo() {
+        console.log("Entrei no finalizar jogo")
         let textoParaMensagemFinal = null
         let classComCoresParaMensagemFinal = null
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
@@ -375,7 +380,7 @@
 
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
         document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
-        document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
+        // document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
 
         document.getElementById('jogo').classList.add("text-new-gray")
 
@@ -408,13 +413,12 @@
             })
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
-                finalizarAguardar();
+                // finalizarAguardar();
             });
-
-
     }
 
     function mostrarPontuacao() {
+        var ranking = document.getElementById('ranking')
         fetch("/quizz/listar").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
@@ -426,21 +430,21 @@
 
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    resposta.forEach(element => {
-                        div_teste.innerHTML = `
+                    resposta.forEach((element, index) => {
+                        ranking.innerHTML += `
                        
-                        ${element.acertos}
+                        ${index + 1}° ${element.nome}: ${element.acertos} Acertos <br>
 
                         `
                     });
-                    finalizarAguardar();
+                    // finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
     }
 </script>
