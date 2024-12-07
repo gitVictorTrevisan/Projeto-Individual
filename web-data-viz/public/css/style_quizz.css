@@ -17,6 +17,12 @@ body {
 
 }
 
+ul,li,ol,a{
+    list-style: none;
+    color: var(--regular-font-color);
+    text-decoration: none;
+}
+
 #tela-inicial {
     display: flex;
     height: 97vh;
@@ -65,7 +71,7 @@ body {
 }
 
 .main-content {
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100vw;
@@ -80,6 +86,10 @@ body {
     align-items: center;
     justify-content: flex-start;
 }
+.ranking{
+    position: absolute;
+    width: 19%; 
+}
 
 .ranking h2{
     font-family: var(--main-font);
@@ -93,6 +103,14 @@ body {
     font-size: 25px;
     font-family: var(--secondary-font);
     color: var(--regular-font-color);
+    display: flex;
+    flex-direction: column;
+    margin: 113px auto;
+}
+
+.container_rank{
+    display: flex;
+    gap: 12px;
 }
 
 .poe-logo{
@@ -116,6 +134,7 @@ body {
     background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    /* background-repeat: no-repeat; */
 }
 
 #pontuacao {

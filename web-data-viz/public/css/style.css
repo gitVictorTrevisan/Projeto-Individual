@@ -1,0 +1,80 @@
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+.main-content {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.left {
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-background {
+    background-image: url(../assets/imgs/nine-palace-bg\ -\ Copia.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    align-items: center;
+}
+
+.flex-colunar {
+    /* display: flex; */
+    display: grid;
+    flex-direction: column;
+}
+
+.main-background {
+    position: fixed;
+    background-image: url(../assets/imgs/nine-palace-bg\ -\ Copia.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+img.poe-logo {
+    width: 100%;
+}
+
+.header-left {
+    border: none;
+}
+
+.header-left {
+    width: 20%;
+}
+
+.painel {
+    background: linear-gradient(#0f0f0f, #000);
+    font-family: var(--secondary-font);
+    color: var(--regular-font-color);
+    font-size: 30px;
+    width: 100%;
+}
+
+.header-left a {
+    text-decoration: none;
+    color: white;
+}
+
+/* .menu h3{
+    margin: initial !important;
+} */
+

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="../assets/icon/favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
@@ -26,26 +27,40 @@
 
         <div class="header-left">
 
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
+            <div class="left main-background">
+                <div class="menu">
+                    <img class="poe-logo" src="../imgs/poe-logo.png" alt="">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="cards.html">
+                                    <h3>Aquários</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./dashboard.html">
+                                    <h3>Gráficos</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./mural.html">
+                                    <h3>Mural de Avisos</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./index_votacao.html">
+                                    <h3>Votação</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">Item</a>
+                            </li>
+                            <li>
+                                <a href="">Sair</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -54,39 +69,56 @@
 
         </div>
 
-        <div class="dash-right">
+        <div class="center">
+            <div id="jogo" class="width-fit-content flex-colunar main-background">
 
+                <div id="infoQuestao" class="padding-8">
+                    <span class="main-font-color">Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span
+                            id="qtdQuestoes"></span>
+                        questões.</span>
+                </div>
 
-            <div class="avisos">
-                <div id="alerta">
+                <div id="perguntaDaQuestaoAtual" class="padding-8">
+                    <span id="spanQuestaoExibida" class="main-font-color"></span>
                 </div>
-                <div class="container">
-                    <h1>Publicar um aviso</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                Título:
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <br>
-                            <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Mural de Avisos</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                    </div>
+
+                <div id="infoAlternativas" class="padding-8">
                 </div>
+
+                <div id="opcoes" class="flex-colunar padding-8">
+                    <span class="radio-options">
+                        <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                        <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                        <!-- <img class="certo" src="../assets/accept.png" alt=""> -->
+                        <!-- <img class="errado" src="../assets/delete.png" alt=""> -->
+                    </span>
+                    <span class="radio-options">
+                        <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                        <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                        <!-- <img class="certo" src="../assets/accept.png" alt=""> -->
+                        <!-- <img class="errado" src="../assets/delete.png" alt=""> -->
+                    </span>
+                    <span class="radio-options">
+                        <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                        <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                        <!-- <img class="certo" src="../assets/accept.png" alt=""> -->
+                        <!-- <img class="errado" src="../assets/delete.png" alt=""> -->
+                    </span>
+                    <span class="radio-options">
+                        <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
+                        <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                        <!-- <img class="certo" src="../assets/accept.png" alt="">
+                        <img class="errado" src="../assets/delete.png" alt=""> -->
+                    </span>
+                </div>
+
+                <div id="botoes" class="padding-8 ">
+                    <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                    <button onclick="avancar()" id="btnProx" disabled>Avançar para proxima questão</button>
+                    <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                    <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -99,7 +131,7 @@
 </html>
 
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {

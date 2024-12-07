@@ -19,11 +19,13 @@ function listar() {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
-        SELECT nome, acertos FROM Quiz
+        SELECT nome, MAX(acertos) AS acertos
+        FROM Quiz
         JOIN Cadastro 
         ON fkCadastro = idCadastro
-        ORDER BY nome
-        limit 10;
+        GROUP BY nome
+        ORDER BY acertos asc
+        LIMIT 10;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

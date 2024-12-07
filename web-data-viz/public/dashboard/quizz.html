@@ -11,10 +11,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Markazi+Text:wght@400..700&display=swap"
         rel="stylesheet">
+        <script src="../js/sessao.js"></script>
 </head>
 
 
-<body onload="onloadEsconder(), mostrarPontuacao()">
+<body onload="onloadEsconder(), mostrarPontuacao(), validarSessao()">
     <div id="tela-inicial">
         <div class="conteudo-tela-inicial">
             <h1 class="main-font-color">PoE Quiz</h1>
@@ -28,11 +29,18 @@
     </div>
     <div id="quiz" class="main-content">
         <div class="left main-background">
-            <div class="ranking">
+            <div class="menu">
                 <img class="poe-logo" src="../imgs/poe-logo.png" alt="">
-                <h2 class="main-font-color" >Ranking</h2>
+                <nav>
+                    <ul>
+                        <li><a href="">Item</a></li>
+                        <li><a href="">Item</a></li>
+                        <li><a href="">Item</a></li>
+                        <li><a href="">Item</a></li>
+                        <li><a href="">Item</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div id="ranking" class="lista-ranking"></div>
         </div>
         <div class="center">
             <div id="jogo" class="width-fit-content flex-colunar main-background">
@@ -88,9 +96,14 @@
         </div>
         <div class="right">
             <div id="pontuacaoEJogo">
-
+                
                 <div id="pontuacao" class="flex-colunar width-fit-content border-primary main-background">
-                    <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                    <!-- <div style="height: 60px;" ></div> -->
+                    <div class="ranking">
+                        <h2 class="main-font-color" >Ranking</h2>
+                    </div>
+                    <div id="ranking" class="lista-ranking"></div>
+                    <!-- <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
                         <span class="width-fit-content main-font-color">Quantidade de acertos: <span
                                 id="spanCertas"></span></span>
                         <span class="width-fit-content main-font-color">Quantidade de erros: <span
@@ -101,7 +114,7 @@
                             <span id="spanPontuacaoFinal main-font-color">***</span>
                         </span>
                         <span id="msgFinal" class="width-fit-content main-font-color">***</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -214,12 +227,12 @@
     // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
 
     function onloadEsconder() {
-        document.getElementById('pontuacao').style.display = "none"
+        // document.getElementById('pontuacao').style.display = "none"
         document.getElementById('jogo').style.display = "none"
     }
 
     function iniciarQuiz() {
-        document.getElementById('pontuacao').style.display = "flex"
+        // document.getElementById('pontuacao').style.display = "flex"
         document.getElementById('jogo').style.display = "flex"
         document.getElementById('btnIniciarQuiz').style.display = "none"
         document.getElementById('tela-inicial').style.display = "none"
@@ -325,7 +338,7 @@
                 document.getElementById(alternativaCorreta).classList.add("alternativa-certa")
                 pontuacaoFinal++
                 certas++
-                document.getElementById("spanCertas").innerHTML = certas
+                // document.getElementById("spanCertas").innerHTML = certas
                 numeroDaQuestaoAtual++
             } else if (option.checked && option.value !== respostaQuestaoAtual) {
                 const wrongLabelId = option.labels[0].id
@@ -335,7 +348,7 @@
                 // document.getElementsByName("errado")[0].style.display = "inline"
                 tentativaIncorreta++
                 erradas++
-                document.getElementById("spanErradas").innerHTML = erradas
+                // document.getElementById("spanErradas").innerHTML = erradas
                 numeroDaQuestaoAtual++
             }
         })
@@ -432,9 +445,10 @@
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
                     resposta.forEach((element, index) => {
                         ranking.innerHTML += `
-                       
-                        ${index + 1}° ${element.nome}: ${element.acertos} Acertos <br>
-
+                       <div class="container_rank">
+                            <span>${index + 1}° ${element.nome}: </span>
+                            <span>${element.acertos} Acertos </span>
+                        </div>
                         `
                     });
                     // finalizarAguardar();

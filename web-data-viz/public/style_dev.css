@@ -1,7 +1,13 @@
 :root {
     --main-font: "OptimusPrincepsSemiBold";
-    --secondary-font: "Cinzel"
-        --title-color: ""
+    --secondary-font: "Cinzel";
+    --regular-font-color: #E4DBCD;
+    --secondary-font-color: #d3a663;
+
+}
+
+* {
+    margin: 0;
 }
 
 body {
@@ -28,6 +34,15 @@ body {
     justify-content: space-between;
 
     padding: 0vh 10vh 0vh 10vh;
+}
+
+.nav-bar-inner .login-efetivado {
+    display: none;
+    font-size: 30px;
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--main-font);
 }
 
 .nav-bar-inner a {
@@ -87,8 +102,10 @@ li {
     position: relative;
     flex-direction: column;
     font-size: 24px;
-    color: #ffffff;
+    color: var(--regular-font-color);
     z-index: 10;
+    gap: 50px;
+    margin-bottom: 297px;
 }
 
 .main-text-landing-page h1 {
@@ -102,24 +119,41 @@ li {
     -webkit-text-fill-color: transparent;
 }
 
-.intersection {
-    margin-top: 14vh;
-    position: absolute;
-    width: 100%;
-}
 
-.intersection img {
-    width: 100%;
+.sobre{
     display: flex;
-    position: absolute;
-    z-index: 2;
+    flex-direction: column;
+    height: 1000px;
+    background-color: #000000;
+    color: var(--regular-font-color);
+    font-size: 20px;
+    gap: 80px;
 }
 
-.intersection .ods_title {
+.sobre-content-1{
+    display: flex;
+    gap: 20px;
+    padding: 50px;
+}
+
+.sobre-content-1 h1{
+    font-family: var(--main-font);
+    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.sobre img{
+    height: 300px;
+}
+
+
+.ods_title {
     display: flex;
     justify-self: center;
     align-self: center;
-    margin-top: 195px;
     font-size: 20px;
     font-family: var(--main-font);
     background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
@@ -127,22 +161,39 @@ li {
     -webkit-text-fill-color: transparent;
     position: relative;
     z-index: 3;
+    top: -165px;
+}
+
+.ods::before {
+
+    content: "";
+    background: url(imgs/intersection.png) no-repeat center top;
+    height: 33%;
+    width: auto;
+    background-size: contain;
+    position: relative;
+    display: block;
+    top: -90px;
 }
 
 .ods {
     background: url(imgs/ods_background_img.png);
-    height: 780px;
-    margin: 45vh 0vh 0vh 0vh;
+    height: 817px;
+    /* margin: 45vh 0vh 0vh 0vh; */
 }
 
 .ods img {
     width: 100%;
+    width: 100%;
+    top: -230px;
+    position: relative;
+
 }
 
 .desc-ods {
     background: url(imgs/fade-desc-ods.png) no-repeat;
     background-size: 100%;
-    height: 850px;
+    height: 600px;
 }
 
 .desc-ods-container {
@@ -152,6 +203,16 @@ li {
     justify-self: center;
     position: relative;
     z-index: 3;
+    gap: 10px;
+}
+
+.desc-ods-box .title {
+    margin-top: 5vh;
+    display: flex;
+    height: 25vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .desc-ods-box {
@@ -164,20 +225,26 @@ li {
 }
 
 .desc-ods h3 {
+    margin: 0;
     font-family: var(--main-font);
-    font-size: 25px;
+    font-size: 40px;
     background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
+    background-size: contain;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .desc-ods p {
-    color: #ffffff;
+    color: var(--regular-font-color);
+    font-size: 20px;
+    margin: 30px 0px;
 }
+
 .intersection-2 {
     position: absolute;
     width: 100%;
 }
+
 .intersection-2 img {
     width: 100%;
     display: flex;
@@ -197,4 +264,60 @@ li {
     -webkit-text-fill-color: transparent;
     position: relative;
     z-index: 3;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 50px 0px;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(180deg, #000000, #101010);
+    color: var(--secondary-font-color);
+}
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    
+}
+
+
+.footer .copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conecte img {
+    height: 40px;
+}
+
+.conecte h2 {
+    font-family: var(--main-font);
+
+}
+.conecte a:hover {
+    transform: scale(1.2);
+}
+.conecte ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+}
+
+.conecte {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
 }
