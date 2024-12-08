@@ -24,6 +24,7 @@ var empresasRouter = require("./src/routes/empresas");
 var quizRouter = require("./src/routes/quizz");
 var votosRouter = require("./src/routes/votos");
 var ninjaRouter = require("./src/routes/ninja");
+var kpiRouter = require("./src/routes/kpi");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -40,6 +41,7 @@ app.use("/empresas", empresasRouter);
 app.use("/quizz", quizRouter);
 app.use("/votos", votosRouter);
 app.use("/ninja", ninjaRouter);
+app.use("/kpi", kpiRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

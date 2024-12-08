@@ -12,34 +12,32 @@
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Markazi+Text:wght@400..700&display=swap"
         rel="stylesheet">
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body onload="validarSessao(), obterDadosGrafico()">
+<body onload="validarSessao(), obterDadosGrafico(), atualizarGrafico(), exibirTotalLigas(), exibirVotos(), exibirVencedora()">
 
     <div class="dashboard-content">
             <div class="left main-background">
                 <div class="">
                     <img class="poe-logo" src="../imgs/poe-logo.png" alt="">
-                    <nav>
+                    <nav class="nav-bar">
                         <ul>
                             <li>
                                 <a href="./dashboard.html">
-                                    <h3>Gráficos</h3>
+                                    <h3>Dashboard</h3>
                                 </a>
                             </li>
                             <li>
-                                <a href="./mural.html">
-                                    <h3>Mural de Avisos</h3>
+                                <a href="./quizz.html">
+                                    <h3>Quiz</h3>
                                 </a>
                             </li>
                             <li>
@@ -47,19 +45,40 @@
                                     <h3>Votação</h3>
                                 </a>
                             </li>
-                            <li>
-                                <a href="">Item</a>
-                            </li>
-                            <li>
-                                <a onclick="limparSessao()" href="">Sair</a>
-                            </li>
                         </ul>
+                        <div class="sair" onclick="limparSessao()" href="">Sair</div>
                     </nav>
                 </div>
             </div>
         <div class="center-content">
-            <div class="grafico">
-                <canvas id="myCanvas"></canvas>
+            <div class="kpis-container">
+                <div class="kpi-box" >
+                    <p>
+                        Ligas registradas
+                    </p>
+                    <div class="resultados" id="kpi-ligas"></div>
+                </div>
+                <div class="kpi-box" >
+                    <p>
+                        Votos computados
+                    </p>
+                    <div class="resultados" id="kpi-votos"></div>
+                </div>
+                <div class="kpi-box" >
+                    <p>
+                        Vencedora
+                    </p>
+                    <div class="resultados" id="kpi-popular"></div>
+                </div>
+                <div class="kpi-box" >
+                    <p>
+
+                    </p>
+                    <div class="resultados" id="kpi-"></div>
+                </div>
+            </div>
+            <div class="grafico ">
+                <canvas id="myCanvas" style="display: block;"></canvas>
             </div>
         </div>
     </div>
@@ -69,7 +88,6 @@
 </html>
 
 <script>
-    // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     let myChart;
 
     function obterDadosGrafico() {
@@ -153,14 +171,14 @@
                     data: ['0', '0'],
                     fill: false,
                     backgroundColor: [
-                        "rgba(140, 0, 255, 0.2)",
-                        "rgba(255, 187, 0, 0.2)",
-                        "rgba(0, 255, 162, 0.2)",
+                        "rgba(211, 166, 99, 0.2)",
+                        // "rgba(255, 187, 0, 0.2)",
+                        // "rgba(0, 255, 162, 0.2)",
                     ],
                     borderColor: [
-                        "rgb(140, 0, 255)",
-                        "rgb(255, 187, 0)",
-                        "rgb(0, 255, 162)",
+                        "rgba(211, 166, 99, 1)",
+                        // "rgb(255, 187, 0)",
+                        // "rgb(0, 255, 162)",
                     ],
                     borderWidth: 1,
                     tension: 0.1,
@@ -181,13 +199,13 @@
             dados.datasets[0].data.push(registro.votos);
         }
 
-        console.log("----------------------------------------------");
-        console.log("O gráfico será plotado com os respectivos valores:");
-        console.log("Labels:");
-        console.log(labels);
-        console.log("Dados:");
-        console.log(dados.datasets.data);
-        console.log("----------------------------------------------");
+        // console.log("----------------------------------------------");
+        // console.log("O gráfico será plotado com os respectivos valores:");
+        // console.log("Labels:");
+        // console.log(labels);
+        // console.log("Dados:");
+        // console.log(dados.datasets.data);
+        // console.log("----------------------------------------------");
 
         // Criando estrutura para plotar gráfico - config
         const config = {
@@ -197,11 +215,18 @@
                 responsive: true,
                 scales: {
                     x: {
+                        grid:{
+                            drawOnChartArea: false
+                        },
                         ticks: {
+                            color: "#E4DBCD",
                             autoSkip: false
                         }
                     },
                     y: {
+                        grid:{
+                            drawOnChartArea: false
+                        },
                         beginAtZero: true,
                     },
                 },
@@ -209,13 +234,13 @@
                     title: {
                         display: true,
                         text: "VOTAÇÃO PARA A LIGA MAIS POPULAR",
-                        color: "#FFFFFF",
+                        color: "#E4DBCD",
                         font: {
                             size: 20,
                         },
                     },
                     legend: {
-                        display: true,
+                        display: false,
                         labels: {
                             color: "white",
                         },
@@ -233,9 +258,9 @@
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then(function (respostaJSON) {
-                        console.log(`Dados recebidos: ${JSON.stringify(respostaJSON)}`);
-                        console.log(`Dados atuais do gráfico:`);
-                        console.log(myChart.data);
+                        // console.log(`Dados recebidos: ${JSON.stringify(respostaJSON)}`);
+                        // console.log(`Dados atuais do gráfico:`);
+                        // console.log(myChart.data);
 
                         myChart.data.datasets[0].data = [];
 
@@ -254,6 +279,100 @@
                     `Erro na obtenção dos dados p/ gráfico: ${error.message}`
                 );
             });
+    }
+    function exibirTotalLigas() {
+        var totalLigas = document.getElementById('kpi-ligas')
+        fetch("/kpi/liga").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    totalLigas.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(totalLigas);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    resposta.forEach(element=> {
+                        totalLigas.innerHTML = `
+                       
+                        ${element.qtdLiga} Ligas
+                        
+                        `
+                        // console.log(element)
+                    });
+                    // finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+
+    
+    function exibirVotos() {
+        var votos = document.getElementById('kpi-votos')
+        fetch("/kpi/votos").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    votos.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(votos);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    resposta.forEach(element=> {
+                        votos.innerHTML = `
+                       
+                        ${element.qtdVotos} 
+                        
+                        `
+                        // console.log(element)
+                    });
+                    // finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+
+
+    function exibirVencedora() {
+        var vencedora = document.getElementById('kpi-popular')
+        fetch("/kpi/vencedora").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    vencedora.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(vencedora);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    resposta.forEach(element=> {
+                        vencedora.innerHTML = `
+                       
+                        ${element.nome} 
+                        
+                        `
+                        // console.log(element)
+                    });
+                    // finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
     }
 
 </script>

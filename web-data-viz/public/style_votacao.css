@@ -8,6 +8,10 @@
    --regular-font-color: #A38D6D;
 }
 
+body {
+   background: #0f0f0f;
+}
+
 .main-font-color {
    background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
    -webkit-background-clip: text;
@@ -19,7 +23,7 @@
    font-family: var(--secondary-font);
    color: var(--regular-font-color);
    font-size: 30px;
-   
+
 }
 
 header {
@@ -27,6 +31,76 @@ header {
    align-items: center;
    justify-content: space-between;
 
+}
+
+.nav-bar {
+   padding-top: 20px;
+   height: 80%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   color: var(--regular-font-color);
+}
+
+
+.nav-bar li {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+
+}
+
+
+.nav-bar ul {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 0;
+   align-items: center;
+   justify-content: center;
+   height: 200px;
+}
+
+.nav-bar a:hover {
+   /* background: #0f0f0f5d; */
+   border-bottom: #A38D6D 2px solid;
+}
+
+.nav-bar a {
+   display: flex;
+   width: 50%;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+.nav-bar h3 {
+   font-family: var(--main-font);
+   display: flex;
+   width: 100%;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.sair {
+   display: flex;
+   justify-content: center;
+   font-family: var(--main-font);
+   color: var(--regular-font-color);
+   font-size: 20px;
+   font-weight: 700;
+   width: 50%;
+}
+
+.sair:hover {
+   cursor: pointer;
+   border-bottom: #a38d6d 2px solid;
 }
 
 .titulos-italicos {
@@ -46,7 +120,7 @@ header {
    text-align: center;
 }
 
-.jogos-concorrentes {
+.ligas-concorrentes {
    display: flex;
    flex-direction: column;
    justify-content: space-around;
@@ -58,7 +132,7 @@ header {
    justify-content: space-around;
 }
 
-.section p{
+.section p {
    display: flex;
    justify-self: center;
 }
@@ -72,7 +146,7 @@ header {
    margin: 30px 0px 0px 30px;
 }
 
-.banner img{
+.banner img {
    height: 300px;
 }
 
@@ -88,7 +162,51 @@ header {
    margin-bottom: 30px;
 }
 
-.janela {
-   display: flex
-;
+/* .janela {
+   display: flex;
+   height: 100vh;
+   width: 20%;
+} */
+
+.redirecionamento {
+   font-family: var(--main-font);
+   display: flex;
+   height: 100vh;
+   width: 81%;
+   background: #0f0f0f;
+   justify-content: center;
+   align-items: center;
+}
+
+.container-2 {
+   display: none;
+   flex-direction: row-reverse;
+   width: 100%;
+}
+
+.redirecionamento-content a:hover {
+   transform: scale(1.2);
+   transition: all 200ms ease-in;
+}
+
+
+.redirecionamento-content a {
+   text-decoration: none;
+   font-size: 40px;
+   transition: all 200ms ease-out;
+   color: #E4DBCD;
+}
+
+.redirecionamento-content h1 {
+   font-size: 60px;
+   font-weight: 500;
+}
+
+.redirecionamento-content {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 20%;
+   gap: 50px;
 }
