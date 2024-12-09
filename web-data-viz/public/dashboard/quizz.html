@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style_quizz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Markazi+Text:wght@400..700&display=swap"
         rel="stylesheet">
@@ -402,8 +403,8 @@
         textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões."
 
 
-        document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
+        // document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
+        // document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
         // document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
 
         document.getElementById('jogo').classList.add("text-new-gray")
@@ -432,7 +433,7 @@
                     mensagem_erro.innerHTML =
                         "Inserção de pontuação realizada com sucesso!"
                 } else {
-                    throw "Houve um erro ao tentar realizar o cadastro!";
+                    throw "Houve um erro ao tentar realizar o cadastro da pontuação!";
                 }
             })
             .catch(function (resposta) {
