@@ -22,7 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body onload="validarSessao(), obterDadosGrafico(), atualizarGrafico(), exibirTotalLigas(), exibirVotos(), exibirVencedora()">
+<body onload="validarSessao(), obterDadosGrafico(), atualizarGrafico(), exibirTotalLigas(), exibirVotos(), exibirVencedora(), exibirMediaQuiz()">
 
     <div class="dashboard-content">
             <div class="left main-background">
@@ -66,15 +66,15 @@
                 </div>
                 <div class="kpi-box" >
                     <p>
-                        Vencedora
+                        Mais popular
                     </p>
                     <div class="resultados" id="kpi-popular"></div>
                 </div>
                 <div class="kpi-box" >
                     <p>
-
+                        Media quiz (Global)
                     </p>
-                    <div class="resultados" id="kpi-"></div>
+                    <div class="resultados" id="kpi-porcentagem"></div>
                 </div>
             </div>
             <div class="grafico ">
@@ -360,6 +360,38 @@
                         vencedora.innerHTML = `
                        
                         ${element.nome} 
+                        
+                        `
+                        // console.log(element)
+                    });
+                    // finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+
+
+    function exibirMediaQuiz() {
+        var mediaQuiz = document.getElementById('kpi-porcentagem')
+        fetch("/kpi/mediaQuiz").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    mediaQuiz.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mediaQuiz);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    resposta.forEach(element=> {
+                        mediaQuiz.innerHTML = `
+                       
+                        ${element.porcentagem_acertos} %
                         
                         `
                         // console.log(element)

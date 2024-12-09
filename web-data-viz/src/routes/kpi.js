@@ -15,5 +15,9 @@ router.get("/vencedora", function (req, res) {
     kpiController.exibirLigaVencedora(req, res);
 })
 
+router.get("/mediaQuiz", function (req, res) {
+    kpiController.exibirMediaQuiz(req, res);
+})
+
 
 module.exports = router;
