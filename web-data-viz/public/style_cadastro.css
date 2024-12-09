@@ -25,7 +25,7 @@ body h1{
 }
 .main-content .title-cadastro{
     font-size: larger;
-    margin-bottom: 3vh;
+    margin-bottom: 2vh;
     font-size: 38px;
     background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
     -webkit-background-clip: text;
@@ -37,6 +37,14 @@ body h1{
     align-items: center;
     height: 30px;
     margin: 0px;
+
+}
+
+
+.main-inputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
 }
 .main-inputs input{
@@ -59,7 +67,7 @@ input::placeholder {
     align-self: center;
     justify-self: center;
     font-size: 30px;
-    margin: 3vh 0vh 2vh 0vh;
+    margin: 0vh 0vh 2vh 0vh;
     background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -76,4 +84,8 @@ input::placeholder {
     background: url(https://web.poecdn.com/protected/image/poe2/common/text-bg.jpg?v=1723154877752&key=j6nfbYIL5CpXofDIvyp7jA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.mensagem_erro {
+    color: #810000;
 }

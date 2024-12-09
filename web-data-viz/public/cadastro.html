@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_cadastro.css">
-    <link rel="icon" href="imgs/favicon.ico">
-    <title>Tela de Cadastro</title>
-</head>
-<body>
-    <div class="main-content">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-              <span id="mensagem_erro"></span>
-            </div>
-          </div>
-        <h3></h3>
-        <span class="title-cadastro">Cadastre-se</span>
-        <div class="main-inputs">
-            <input id="ipt_nome" type="text" placeholder=" Nome">
-            <p></p>
-            <input id="ipt_email" type="text" placeholder=" E-Mail">
-            <p></p>
-            <input id="ipt_senha" type="password" placeholder=" Senha">
-            <p></p>
-            <input id="ipt_confirmar_senha" type="password" placeholder=" Confirme sua senha">
-        </div>
-        <button class="button_cadastrar" onclick="cadastrar()">Cadastrar</button>
-        <span class="login">Já possui uma conta<a href="login.html">? Faça login.</a></span>
-    </div>
-    <div id="div_aguardar" class="loading-div" style="display: none;">
-        <img src="./assets/circle-loading.gif" id="loading-gif" />
-      </div>
 
-      <div id="div_erros_login"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style_cadastro.css">
+  <link rel="icon" href="imgs/favicon.ico">
+  <title>Tela de Cadastro</title>
+</head>
+
+<body>
+  <div class="main-content">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+    <h3></h3>
+    <span class="title-cadastro">Cadastre-se</span>
+    <div class="main-inputs">
+      <input id="ipt_nome" type="text" placeholder=" Nome">
+      <p class="mensagem_erro" id="validacao_nome"></p>
+      <input id="ipt_email" type="text" placeholder=" E-Mail">
+      <p class="mensagem_erro" id="validacao_email"></p>
+      <input id="ipt_senha" type="password" placeholder=" Senha">
+      <p class="mensagem_erro" id="validacao_senha"></p>
+      <input id="ipt_confirmar_senha" type="password" placeholder=" Confirme sua senha">
+      <p class="mensagem_erro" id="confirmar_senha"></p>
+    </div>
+    <button class="button_cadastrar" onclick=" validarCadastro()">Cadastrar</button>
+    <span class="login">Já possui uma conta<a href="login.html">? Faça login.</a></span>
+  </div>
+  <div id="div_aguardar" class="loading-div" style="display: none;">
+    <img src="./assets/circle-loading.gif" id="loading-gif" />
+  </div>
+
+  <div id="div_erros_login"></div>
 </body>
 
 <script src="cadastro.js"></script>
+<script src="validacoes.js"></script>
+
 </html>
